@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Sabrina Silveira | Advocacia & Consultoria Jurídica</title>
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fontes do Google: Playfair Display e Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Biblioteca Font Awesome para Ícones Oficiais (WhatsApp) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação Centralizada -->
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Logo Centralizado -->
+            <a href="#" class="logo">
+                <img src="images/logo-sabrina.png" alt="Logo Dra. Sabrina Silveira" class="logo-img">
+            </a>
+            
+            <!-- Links do Menu -->
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#atuacao">Áreas de Atuação</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            
+            <!-- Botão Dark Mode -->
+            <button id="theme-toggle" class="btn-theme" aria-label="Alternar Tema">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <main>
+        <section class="hero">
+            <div class="hero-container">
+                <!-- Moldura da Foto de Perfil -->
+                <div class="hero-image">
+                    <div class="img-frame">
+                        <img src="images/foto-sabrina.jpg" alt="Dra. Sabrina Silveira - Advogada" class="profile-img">
+                    </div>
+                </div>
+
+                <!-- Conteúdo Textual ao Lado da Foto -->
+                <div class="hero-content">
+                    <span class="badge">Advocacia & Consultoria Jurídica</span>
+                    <h1>Dra. Sabrina Silveira</h1>
+                    <p class="subtitle">Soluções jurídicas estratégicas, personalizadas e orientadas à excelência.</p>
+                    <p class="description">Atuação focada na defesa rigorosa dos interesses dos nossos clientes, combinando ética, transparência e alta performance técnica.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/5551980475168?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20jurídica." target="_blank" class="btn-gold">Agendar Consulta</a>
+                        <a href="#atuacao" class="btn-outline">Conhecer Áreas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre -->
+        <section id="sobre" class="section">
+            <div class="container">
+                <span class="section-tag">Perfil Profissional</span>
+                <h2>Compromisso com a Justiça e Eficiência</h2>
+                <div class="divider"></div>
+                <p class="about-text">Com sólida formação e compromisso ético, o escritório Dra. Sabrina Silveira oferece assessoria jurídica consultiva e litigiosa de alta precisão. Nosso objetivo é proporcionar aos clientes segurança jurídica e estratégias sob medida para a resolução de conflitos complexos.</p>
+            </div>
+        </section>
+
+        <!-- Seção Áreas de Atuação -->
+        <section id="atuacao" class="section bg-alt">
+            <div class="container">
+                <span class="section-tag">Especialidades</span>
+                <h2>Áreas de Atuação</h2>
+                <div class="divider"></div>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>Direito Previdenciário</h3>
+                        <p>Planejamento de aposentadoria, concessão e revisão de benefícios junto ao INSS com análise minuciosa de cada histórico.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📜</div>
+                        <h3>Direito Civil & Família</h3>
+                        <p>Acompanhamento em sucessões, inventários, contratos, indenizações e resolução de litígios patrimoniais familiares.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🏛️</div>
+                        <h3>Consultoria Preventiva</h3>
+                        <p>Orientação estratégica antecipada para evitar processos judiciais desgastantes e mitigar riscos futuros.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <!-- Seção Contato -->
+        <section id="contato" class="section">
+            <div class="container">
+                <span class="section-tag">Atendimento</span>
+                <h2>Entre em Contato</h2>
+                <div class="divider"></div>
+
+                <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" required placeholder="Digite seu nome completo">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail de Contato</label>
+                <!-- Atualizado com o e-mail oficial no placeholder -->
+                <input type="email" id="email" required placeholder="contato@sabrinasilveira.adv.br">
+            </div>
+            <div class="form-group">
+                <label for="message">Resumo do Caso / Mensagem</label>
+                <textarea id="message" rows="5" required placeholder="Descreva brevemente como podemos ajudar..."></textarea>
+            </div>
+            <button type="submit" class="btn-gold block-btn">Enviar Mensagem</button>
+            </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p><strong>Dra. Sabrina Silveira</strong> &bull; OAB/RS 123.439</p>
+            <p>&copy; 2026 Todos os direitos reservados. Edesign.</p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante Oficial do WhatsApp -->
+    <a href="https://wa.me/5551980475168?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20jurídica." target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+/* ==========================================================================
+   1. Variáveis Globais de Cores & Tipografia
+   ========================================================================== */
+:root {
+    --navy-dark: #0B1B2B;        /* Azul Marinho Nobre */
+    --navy-light: #162C42;       
+    --gold: #C5A059;             /* Dourado Elegante */
+    --gold-hover: #B08C45;       
+    --text-color: #2C3E50;       
+    --text-muted: #607D8B;       
+    --bg-color: #F8F9FA;         /* Fundo da Página (Sincronizado com o Logo) */
+    --bg-alt: #EFEFEF;           
+    --card-bg: #FFFFFF;          
+    --border-color: #E2E8F0;     
+    --shadow: 0 15px 35px rgba(11, 27, 43, 0.07);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Tipografia */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* Modo Escuro Premium */
+body.dark-mode {
+    --navy-dark: #060E17;
+    --text-color: #E2E8F0;
+    --text-muted: #94A3B8;
+    --bg-color: #0B1724;
+    --bg-alt: #0F1F30;
+    --card-bg: #13273D;
+    --border-color: #1E3A5F;
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. Elementos e Botões Gerais
+   ========================================================================== */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.section-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    color: var(--navy-dark);
+    margin-bottom: 12px;
+}
+
+body.dark-mode .section h2 {
+    color: #FFFFFF;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 0 auto 30px auto;
+    border-radius: 2px;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+/* Botões */
+.btn-gold {
+    background-color: var(--gold);
+    color: #FFFFFF;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--navy-dark);
+    border: 1px solid var(--navy-dark);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+body.dark-mode .btn-outline {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.btn-outline:hover {
+    background-color: var(--navy-dark);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   3. Cabeçalho (Header) & Logo Centralizado
+   ========================================================================== */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;         /* Empilha o Logo e o Menu no centro */
+    justify-content: center;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    gap: 16px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* ONDE AUMENTAR O TAMANHO DO LOGO: */
+.logo-img {
+    height: 90px;                   /* Para aumentar/diminuir o logo, altere este valor (ex: 80px, 100px, 120px) */
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.btn-theme {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+/* ==========================================================================
+   4. Seção Hero (Foto + Apresentação)
+   ========================================================================== */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.hero-container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-frame {
+    position: relative;
+    padding: 12px;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+}
+
+.hero-content {
+    flex: 1.2;
+    text-align: left;
+}
+
+.badge {
+    background-color: rgba(197, 160, 89, 0.12);
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--navy-dark);
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .hero-content h1 {
+    color: #FFFFFF;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.hero-content .description {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+}
+
+/* ==========================================================================
+   5. Cards de Serviços
+   ========================================================================== */
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    text-align: left;
+    transition: var(--transition);
+    position: relative;
+    top: 0;
+}
+
+.card:hover {
+    top: -8px;
+    border-color: var(--gold);
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--navy-dark);
+    margin-bottom: 14px;
+}
+
+body.dark-mode .card h3 {
+    color: #FFFFFF;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   6. Formulário de Contato
+   ========================================================================== */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+.block-btn {
+    width: 100%;
+}
+
+/* ==========================================================================
+   7. Rodapé e Botão Flutuante de WhatsApp
+   ========================================================================== */
+.footer {
+    background-color: var(--navy-dark);
+    color: #A0AEC0;
+    padding: 35px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer strong {
+    color: #FFFFFF;
+}
+
+/* Ícone do WhatsApp Verde Flutuante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;       /* Verde Oficial */
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-size: 32px;                  /* Tamanho do ícone */
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    background-color: #20BA5A;
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   8. Responsividade Mobile
+   ========================================================================== */
+@media (max-width: 868px) {
+    .logo-img {
+        height: 65px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}

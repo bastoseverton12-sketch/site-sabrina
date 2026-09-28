@@ -34,12 +34,23 @@
       top: 0;
       z-index: 1000;
     }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 45px;
+      width: auto;
+    }
     .logo h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 600;
+      margin: 0;
+      line-height: 1.2;
     }
     .logo span {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--secondary);
       display: block;
     }
@@ -195,11 +206,15 @@
 </head>
 <body>
 
-  <!-- CABEÇALHO ORIGINAL -->
+  <!-- CABEÇALHO COM ESPAÇO PARA O LOGO -->
   <header>
     <div class="logo">
-      <h1>Dra. Sabrina Silveira</h1>
-      <span>Advocacia &amp; Consultoria Jurídica</span>
+      <!-- Caso faça upload da imagem do logo para o GitHub com o nome "logo.png", a tag abaixo irá exibi-lo automaticamente -->
+      <img src="logo.png" alt="Logo Dra. Sabrina Silveira" onerror="this.style.display='none'">
+      <div>
+        <h1>Dra. Sabrina Silveira</h1>
+        <span>Advocacia &amp; Consultoria Jurídica</span>
+      </div>
     </div>
     <nav>
       <a href="#sobre">Sobre</a>
@@ -209,14 +224,14 @@
     </nav>
   </header>
 
-  <!-- HERO ORIGINAL -->
+  <!-- HERO -->
   <section class="hero">
     <h2>Soluções Jurídicas com Excelência e Comprometimento</h2>
     <p>Atendimento personalizado e focado na defesa dos seus direitos com ética e agilidade.</p>
     <a href="#contato" class="btn">Agendar Consulta</a>
   </section>
 
-  <!-- SOBRE ORIGINAL -->
+  <!-- SOBRE -->
   <section id="sobre" class="container">
     <h2 class="section-title">Sobre a Profissional</h2>
     <p class="section-subtitle">Dra. Sabrina Silveira | OAB/RS 123.439</p>
@@ -225,7 +240,7 @@
     </p>
   </section>
 
-  <!-- SERVIÇOS/ATUAÇÃO ORIGINAL -->
+  <!-- SERVIÇOS/ATUAÇÃO -->
   <section id="servicos" style="background-color: #f1f3f5; padding: 4rem 1rem;">
     <div class="container" style="padding: 0;">
       <h2 class="section-title">Áreas de Atuação</h2>
@@ -248,7 +263,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DE DEPOIMENTOS DO GOOGLE (NOVA SEÇÃO) -->
+  <!-- SEÇÃO DE DEPOIMENTOS DO GOOGLE -->
   <section id="depoimentos" class="depoimentos-bg">
     <div class="container" style="padding: 0;">
       <h2 class="section-title">Avaliações dos Clientes</h2>
@@ -312,7 +327,7 @@
     </div>
   </section>
 
-  <!-- CONTATO ORIGINAL COM O BOTÃO DE WHATSAPP -->
+  <!-- CONTATO & WHATSAPP -->
   <section id="contato" class="container">
     <h2 class="section-title">Entre em Contato</h2>
     <p class="section-subtitle">Estamos prontos para atender você</p>
@@ -335,7 +350,7 @@
     </div>
   </section>
 
-  <!-- RODAPÉ ORIGINAL -->
+  <!-- RODAPÉ -->
   <footer>
     <p>&copy; Dra. Sabrina Silveira - OAB/RS 123.439. Todos os direitos reservados.</p>
   </footer>

@@ -6,8 +6,8 @@
   <title>Dra. Sabrina Silveira | Advocacia &amp; Consultoria Jurídica</title>
   <style>
     :root {
-      /* Cor ajustada exatamente para o azul escuro do fundo do logotipo */
-      --primary: #121e30; 
+      /* Cor exata do cabeçalho do seu modelo */
+      --primary: #0e1726; 
       --secondary: #c5a059;
       --light: #f8f9fa;
       --dark: #212529;
@@ -44,7 +44,8 @@
       height: 48px;
       width: auto;
       object-fit: contain;
-      mix-blend-mode: multiply; /* Suaviza bordas caso haja variação de tom */
+      /* Remove o fundo preto da imagem tornando-o transparente */
+      mix-blend-mode: screen; 
     }
     .logo h1 {
       font-size: 1.3rem;
@@ -68,7 +69,7 @@
       color: var(--secondary);
     }
     .hero {
-      background: linear-gradient(rgba(18, 30, 48, 0.88), rgba(18, 30, 48, 0.88)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover;
+      background: linear-gradient(rgba(14, 23, 38, 0.88), rgba(14, 23, 38, 0.88)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover;
       color: white;
       text-align: center;
       padding: 6rem 1rem;

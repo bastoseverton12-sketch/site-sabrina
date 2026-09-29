@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Sabrina Silveira | Advocacia &amp; Consultoria Jurídica</title>
+  <style>
+    :root {
+      /* Cor exata do cabeçalho do seu modelo */
+      --primary: #1b263b; 
+      --secondary: #c5a059;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+    }
+    .logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      /* Remove o fundo preto da imagem tornando-o transparente */
+      mix-blend-mode: screen; 
+    }
+    .logo h1 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .logo span {
+      font-size: 0.8rem;
+      color: var(--secondary);
+      display: block;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--secondary);
+    }
+    .hero {
+      background: linear-gradient(rgba(14, 23, 38, 0.88), rgba(14, 23, 38, 0.88)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover;
+      color: white;
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #b08d46;
+    }
+    .container {
+      max-width: 2000px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 3rem;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--secondary);
+    }
+    .service-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* SEÇÃO DE DEPOIMENTOS */
+    .depoimentos-bg {
+      background-color: #ffffff;
+      padding: 4rem 1rem;
+      border-top: 1px solid #e9ecef;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .grid-depoimentos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card-depoimento {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .estrelas {
+      color: #ffb400;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .texto-depoimento {
+      color: #495057;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    .autor-depoimento {
+      margin-top: 1rem;
+      border-top: 1px solid #dee2e6;
+      padding-top: 0.75rem;
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    /* CONTATO & WHATSAPP */
+    .contact-container {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      margin-top: 1.5rem;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1eb954;
+      transform: translateY(-2px);
+    }
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Dra. Sabrina Silveira" onerror="this.style.display='none'">
+      <div>
+        <h1>Dra. Sabrina Silveira</h1>
+        <span>Advocacia &amp; Consultoria Jurídica</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Atuação</a>
+      <a href="#depoimentos">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Soluções Jurídicas com Excelência e Comprometimento</h2>
+    <p>Atendimento personalizado e focado na defesa dos seus direitos com ética e agilidade.</p>
+    <a href="#contato" class="btn">Agendar Consulta</a>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="container">
+    <h2 class="section-title">Sobre a Profissional</h2>
+    <p class="section-subtitle">Dra. Sabrina Silveira | OAB/RS 123.439</p>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--gray);">
+      Com atuação pautada pela ética, transparência e dedicação, prestamos serviços de advocacia e consultoria jurídica preventiva e litigiosa, buscando sempre a melhor solução estratégica para cada cliente.
+    </p>
+  </section>
+
+  <!-- SERVIÇOS/ATUAÇÃO -->
+  <section id="servicos" style="background-color: #f1f3f5; padding: 4rem 1rem;">
+    <div class="container" style="padding: 0;">
+      <h2 class="section-title">Áreas de Atuação</h2>
+      <p class="section-subtitle">Conheça nossas principais especialidades</p>
+      
+      <div class="services">
+        <div class="service-card">
+          <h3>Direito Civil &amp; Família</h3>
+          <p>Ações de família, sucessões, inventários, elaboração e revisão de contratos e indenizações.</p>
+        </div>
+        <div class="service-card">
+          <h3>Direito do Consumidor</h3>
+          <p>Defesa dos direitos do consumidor, cobranças indevidas e solução de conflitos prestacionais.</p>
+        </div>
+        <div class="service-card">
+          <h3>Consultoria Preventiva</h3>
+          <p>Orientação jurídica estratégica para prevenção de litígios e análise de riscos burocráticos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE DEPOIMENTOS DO GOOGLE -->
+  <section id="depoimentos" class="depoimentos-bg">
+    <div class="container" style="padding: 0;">
+      <h2 class="section-title">Avaliações dos Clientes</h2>
+      <p class="section-subtitle">Depoimentos reais deixados no Google Meu Negócio (⭐ 5.0 / 5.0)</p>
+
+      <div class="grid-depoimentos">
+        <div class="card-depoimento">
+          <div>
+            <div class="estrelas">★★★★★</div>
+            <p class="texto-depoimento">"Excelente profissional! A Dra. Sabrina Silveira é muito atenciosa, competente e transmite total segurança. Recomendo!"</p>
+          </div>
+          <div class="autor-depoimento">— Jonas Avila</div>
+        </div>
+
+        <div class="card-depoimento">
+          <div>
+            <div class="estrelas">★★★★★</div>
+            <p class="texto-depoimento">"Ótimo atendimento, tira todas as dúvidas. Processo encerrado com sucesso. Fez seu trabalho com excelência!"</p>
+          </div>
+          <div class="autor-depoimento">— Simone Alves Silveira Moraes</div>
+        </div>
+
+        <div class="card-depoimento">
+          <div>
+            <div class="estrelas">★★★★★</div>
+            <p class="texto-depoimento">"Ótima profissional! Respeitosa e atenciosa com os clientes e muito dedicada com seu trabalho. Super recomendo!"</p>
+          </div>
+          <div class="autor-depoimento">— Vera Vieira</div>
+        </div>
+
+        <div class="card-depoimento">
+          <div>
+            <div class="estrelas">★★★★★</div>
+            <p class="texto-depoimento">"Uma profissional de competência e agilidade sem palavras para descrever."</p>
+          </div>
+          <div class="autor-depoimento">— Loreci Guedes</div>
+        </div>
+
+        <div class="card-depoimento">
+          <div>
+            <div class="estrelas">★★★★★</div>
+            <p class="texto-depoimento">"Super bem atendido excelente trabalho executado ..super recomendo essa advogada pode confiar"</p>
+          </div>
+          <div class="autor-depoimento">— C4 GUCCI C4 ESPORTS</div>
+        </div>
+
+        <div class="card-depoimento">
+          <div>
+            <div class="estrelas">★★★★★</div>
+            <p class="texto-depoimento">"Fui muito bem atendida, ótima profissional, está de parabéns!"</p>
+          </div>
+          <div class="autor-depoimento">— Alessandra Silveira</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://maps.app.goo.gl/uXjA7xR6D6Z3XvB56" target="_blank" class="btn" style="background-color: var(--primary);">
+          Ver avaliações no Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO & WHATSAPP -->
+  <section id="contato" class="container">
+    <h2 class="section-title">Entre em Contato</h2>
+    <p class="section-subtitle">Estamos prontos para atender você</p>
+
+    <div class="contact-container">
+      <h3>Atendimento via WhatsApp</h3>
+      <p style="color: var(--gray); margin-top: 0.5rem;">Clique no botão abaixo para iniciar o atendimento direto com o escritório.</p>
+
+      <a href="https://wa.me/5551980475168?text=Ol%C3%A1,%20Dra.%20Sabrina!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="btn-whatsapp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        Falar no WhatsApp
+      </a>
+
+      <div style="margin-top: 2rem; font-size: 0.95rem; color: var(--gray);">
+        <p><strong>E-mail:</strong> contato@sabrinasilveira.adv.br</p>
+        <p><strong>Atendimento:</strong> Santa Cruz do Sul / RS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>&copy; Dra. Sabrina Silveira - OAB/RS 123.439. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

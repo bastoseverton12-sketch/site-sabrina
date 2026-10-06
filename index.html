@@ -11,6 +11,7 @@
       --light: #f8f9fa;
       --dark: #212529;
       --gray: #6c757d;
+      --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
     * {
       margin: 0;
@@ -67,7 +68,7 @@
       color: var(--secondary);
     }
 
-    /* HERO SECTION - FOTO DA SABRINA AJUSTADA */
+    /* HERO SECTION */
     .hero {
       background: linear-gradient(rgba(14, 23, 38, 0.45), rgba(14, 23, 38, 0.45)), url('./sabrina.jpg') center center / cover no-repeat;
       color: white;
@@ -115,6 +116,77 @@
       color: var(--gray);
       margin-bottom: 3rem;
     }
+
+    /* SEÇÃO INSTAGRAM */
+    .instagram-section {
+      background-color: #ffffff;
+      padding: 4rem 1rem;
+      border-top: 1px solid #e9ecef;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .insta-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .insta-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .insta-img-wrapper {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+    .insta-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .insta-content {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    .insta-text {
+      color: #444;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .btn-insta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--insta-gradient);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+    .btn-insta:hover {
+      opacity: 0.9;
+    }
+
+    /* SERVIÇOS */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -132,7 +204,7 @@
       margin-bottom: 1rem;
     }
 
-    /* SEÇÃO DE DEPOIMENTOS */
+    /* DEPOIMENTOS */
     .depoimentos-bg {
       background-color: #ffffff;
       padding: 4rem 1rem;
@@ -224,26 +296,84 @@
     </div>
     <nav>
       <a href="#sobre">Sobre</a>
+      <a href="#instagram">Instagram</a>
       <a href="#servicos">Atuação</a>
       <a href="#depoimentos">Avaliações</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <!-- HERO (COM A FOTO DA DRA. SABRINA) -->
+  <!-- HERO -->
   <section class="hero">
     <h2>Soluções Jurídicas com Excelência e Comprometimento</h2>
     <p>Atendimento personalizado e focado na defesa dos seus direitos com ética e agilidade.</p>
     <a href="#contato" class="btn">Agendar Consulta</a>
   </section>
 
-  <!-- SOBRE -->
+  <!-- SOBRE A PROFISSIONAL -->
   <section id="sobre" class="container">
     <h2 class="section-title">Sobre a Profissional</h2>
     <p class="section-subtitle">Dra. Sabrina Silveira | OAB/RS 123.439</p>
     <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--gray);">
       Com atuação pautada pela ética, transparência e dedicação, prestamos serviços de advocacia e consultoria jurídica preventiva e litigiosa, buscando sempre a melhor solução estratégica para cada cliente.
     </p>
+  </section>
+
+  <!-- SEÇÃO INSTAGRAM -->
+  <section id="instagram" class="instagram-section">
+    <div class="container" style="padding: 0;">
+      <h2 class="section-title">Acompanhe no Instagram</h2>
+      <p class="section-subtitle">Acompanhe os conteúdos e orientações publicadas no perfil @sabrinasilveira_adv</p>
+
+      <div class="insta-grid">
+        
+        <!-- Post 1 -->
+        <div class="insta-card">
+          <div class="insta-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNkTOhAYGryK9LRtniU_8nkzofEeCKSZli06YTj" alt="Responsabilidade e Convivência Familiar">
+          </div>
+          <div class="insta-content">
+            <p class="insta-text">"Convivência não se mede em horas, mas em presença de verdade. Não é sobre cumprir calendário, é sobre construir vínculo."</p>
+            <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" class="btn-insta">
+              Ver no Instagram
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="insta-card">
+          <div class="insta-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOVeJNf5QBsbfTv1582QMDdZgbK5dybDrBpE3Qy" alt="Sobrecarga Materna e Direito de Família">
+          </div>
+          <div class="insta-content">
+            <p class="insta-text">"Sobrecarga materna não é só sobre dinheiro, é sobre tempo, energia e presença. Parentalidade responsável exige participação real."</p>
+            <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" class="btn-insta">
+              Ver no Instagram
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="insta-card">
+          <div class="insta-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipP3qpTcZSVdfMC5mRpbjmbghKQj-0J8rBkhjOFr" alt="Proteção e Lei Maria da Penha">
+          </div>
+          <div class="insta-content">
+            <p class="insta-text">"Igualdade só existe quando há respeito e liberdade. Violência vai além do físico — a Lei Maria da Penha garante proteção integral."</p>
+            <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" class="btn-insta">
+              Ver no Instagram
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" class="btn-insta" style="padding: 0.8rem 2rem; font-size: 1rem;">
+          Siga @sabrinasilveira_adv no Instagram
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- SERVIÇOS/ATUAÇÃO -->
@@ -269,7 +399,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DE DEPOIMENTOS DO GOOGLE -->
+  <!-- DEPOIMENTOS DO GOOGLE -->
   <section id="depoimentos" class="depoimentos-bg">
     <div class="container" style="padding: 0;">
       <h2 class="section-title">Avaliações dos Clientes</h2>

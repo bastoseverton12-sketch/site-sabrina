@@ -6,8 +6,7 @@
   <title>Dra. Sabrina Silveira | Advocacia &amp; Consultoria Jurídica</title>
   <style>
     :root {
-      /* Cor exata do cabeçalho do seu modelo */
-      --primary: #1b263b; 
+      --primary: #0e1726; 
       --secondary: #c5a059;
       --light: #f8f9fa;
       --dark: #212529;
@@ -27,7 +26,7 @@
     header {
       background-color: var(--primary);
       color: white;
-      padding: 1rem 10%;
+      padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -38,13 +37,12 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 100px;
+      gap: 12px;
     }
     .logo img {
       height: 48px;
       width: auto;
       object-fit: contain;
-      /* Remove o fundo preto da imagem tornando-o transparente */
       mix-blend-mode: screen; 
     }
     .logo h1 {
@@ -68,11 +66,14 @@
     nav a:hover {
       color: var(--secondary);
     }
+
+    /* HERO SECTION COM A FOTO DA SABRINA */
     .hero {
-      background: linear-gradient(rgba(14, 23, 38, 0.88), rgba(14, 23, 38, 0.88)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover;
+      /* Imagem sabrina.jpg adicionada no fundo com sobreposição escurecida para legibilidade */
+      background: linear-gradient(rgba(14, 23, 38, 0.75), rgba(14, 23, 38, 0.75)), url('sabrina.jpg') center top / cover no-repeat;
       color: white;
       text-align: center;
-      padding: 6rem 1rem;
+      padding: 7rem 1rem;
     }
     .hero h2 {
       font-size: 2.5rem;
@@ -97,7 +98,7 @@
       background-color: #b08d46;
     }
     .container {
-      max-width: 2000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 4rem 1rem;
     }
@@ -227,7 +228,7 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (COM A FOTO DA DRA. SABRINA NO FUNDO) -->
   <section class="hero">
     <h2>Soluções Jurídicas com Excelência e Comprometimento</h2>
     <p>Atendimento personalizado e focado na defesa dos seus direitos com ética e agilidade.</p>

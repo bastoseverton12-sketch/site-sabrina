@@ -1,572 +1,675 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dra. Sabrina Silveira | Advocacia &amp; Consultoria Jurídica</title>
-  <!-- Ícones Font Awesome para o WhatsApp e navegação -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #0e1726; 
-      --secondary: #c5a059;
-      --light: #f8f9fa;
-      --dark: #212529;
-      --gray: #6c757d;
-      --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    header {
-      background-color: var(--primary);
-      color: white;
-      padding: 1rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo img {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
-      mix-blend-mode: screen; 
-    }
-    .logo h1 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 0;
-      line-height: 1.2;
-    }
-    .logo span {
-      font-size: 0.8rem;
-      color: var(--secondary);
-      display: block;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1.2rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      font-size: 0.95rem;
-    }
-    nav a:hover {
-      color: var(--secondary);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Sabrina Silveira | Advocacia & Consultoria Jurídica em Santa Cruz do Sul - RS</title>
+    <meta name="description" content="Escritório de Advocacia Dra. Sabrina Silveira em Santa Cruz do Sul - RS. OAB/RS 123.439. Especialista em Direito de Família, Sucessões, Civil e Consumidor. Atendimento ético e transparente.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1b2a47',
+                            900: '#0e1726',
+                            950: '#080d1a',
+                        },
+                        gold: {
+                            400: '#d4af37',
+                            500: '#c5a059',
+                            600: '#a37f37',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    /* HERO SECTION */
-    .hero {
-      background: linear-gradient(rgba(14, 23, 38, 0.55), rgba(14, 23, 38, 0.55)), url('./sabrina.jpg') center center / cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 8rem 1rem;
-      text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-    .btn {
-      display: inline-block;
-      background-color: var(--secondary);
-      color: white;
-      padding: 0.8rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-      text-shadow: none;
-    }
-    .btn:hover {
-      background-color: #b08d46;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4rem 1rem;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .section-subtitle {
-      text-align: center;
-      color: var(--gray);
-      margin-bottom: 3rem;
-    }
-
-    /* SEÇÃO INSTAGRAM */
-    .instagram-section {
-      background-color: #ffffff;
-      padding: 4rem 1rem;
-      border-top: 1px solid #e9ecef;
-      border-bottom: 1px solid #e9ecef;
-    }
-    .insta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .insta-card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border: 1px solid #eee;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    .insta-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-    .insta-img-wrapper {
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      position: relative;
-    }
-    .insta-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .insta-content {
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
-    .insta-text {
-      color: #444;
-      font-size: 0.92rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-    .btn-insta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: var(--insta-gradient);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: bold;
-      transition: opacity 0.3s;
-    }
-    .btn-insta:hover {
-      opacity: 0.9;
-    }
-
-    /* SERVIÇOS */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .service-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      border-top: 4px solid var(--secondary);
-    }
-    .service-card h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    /* SEÇÃO DE DIFERENCIAIS (EM SUBSTITUIÇÃO ÀS AVALIAÇÕES) */
-    .diferenciais-bg {
-      background-color: #ffffff;
-      padding: 4rem 1rem;
-      border-top: 1px solid #e9ecef;
-      border-bottom: 1px solid #e9ecef;
-    }
-    .grid-diferenciais {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .card-diferencial {
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      border: 1px solid #e9ecef;
-    }
-    .icon-diferencial {
-      font-size: 2.2rem;
-      color: var(--secondary);
-      margin-bottom: 1rem;
-    }
-    .card-diferencial h3 {
-      color: var(--primary);
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-    }
-    .card-diferencial p {
-      color: #555;
-      font-size: 0.95rem;
-    }
-
-    /* SEÇÃO LOCALIZAÇÃO & MAPA */
-    .mapa-section {
-      background-color: #f1f3f5;
-      padding: 4rem 1rem;
-    }
-    .mapa-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
-      .mapa-container {
-        grid-template-columns: 1fr;
-      }
-    }
-    .mapa-info {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .mapa-info h3 {
-      color: var(--primary);
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-    .mapa-info p {
-      color: #555;
-      margin-bottom: 0.8rem;
-    }
-    .btn-rota {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: var(--primary);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1rem;
-      transition: background-color 0.3s;
-    }
-    .btn-rota:hover {
-      background-color: #1a2c4e;
-    }
-    .mapa-iframe {
-      width: 100%;
-      height: 380px;
-      border: 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    /* CONTATO & WHATSAPP */
-    .contact-container {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .btn-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: #25D366;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-      margin-top: 1.5rem;
-      transition: transform 0.2s, background-color 0.2s;
-    }
-    .btn-whatsapp:hover {
-      background-color: #1eb954;
-      transform: translateY(-2px);
-    }
-    footer {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    /* BOTÃO FLUTUANTE DO WHATSAPP */
-    .whatsapp-flutuante {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50px;
-      padding: 12px 22px;
-      font-weight: bold;
-      font-size: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 9999;
-      text-decoration: none;
-      transition: transform 0.2s, background-color 0.2s;
-    }
-    .whatsapp-flutuante:hover {
-      transform: scale(1.05);
-      background-color: #1eb954;
-    }
-  </style>
+    <style>
+        .mix-blend-overlay-logo {
+            mix-blend-mode: color-burn;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(14, 23, 38, 0.96) 0%, rgba(27, 42, 71, 0.90) 100%);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
 
-  <!-- CABEÇALHO -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo Dra. Sabrina Silveira" onerror="this.style.display='none'">
-      <div>
-        <h1>Dra. Sabrina Silveira</h1>
-        <span>Advocacia &amp; Consultoria Jurídica</span>
-      </div>
-    </div>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#servicos">Atuação</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#localizacao">Localização</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Soluções Jurídicas com Excelência e Comprometimento</h2>
-    <p>Atendimento personalizado e focado na defesa dos seus direitos com ética e agilidade.</p>
-    <a href="#contato" class="btn">Agendar Consulta</a>
-  </section>
-
-  <!-- SOBRE A PROFISSIONAL -->
-  <section id="sobre" class="container">
-    <h2 class="section-title">Sobre a Profissional</h2>
-    <p class="section-subtitle">Dra. Sabrina Silveira | OAB/RS 123.439</p>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--gray);">
-      Com atuação pautada pela ética, transparência e dedicação, prestamos serviços de advocacia e consultoria jurídica preventiva e litigiosa, buscando sempre a melhor solução estratégica para cada cliente.
-    </p>
-  </section>
-
-  <!-- SEÇÃO INSTAGRAM -->
-  <section id="instagram" class="instagram-section">
-    <div class="container" style="padding: 0;">
-      <h2 class="section-title">Acompanhe no Instagram</h2>
-      <p class="section-subtitle">Acompanhe os conteúdos e orientações publicadas no perfil @sabrinasilveira_adv</p>
-
-      <div class="insta-grid">
-        
-        <!-- Post 1 -->
-        <div class="insta-card">
-          <div class="insta-img-wrapper">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipNkTOhAYGryK9LRtniU_8nkzofEeCKSZli06YTj" alt="Responsabilidade e Convivência Familiar">
-          </div>
-          <div class="insta-content">
-            <p class="insta-text">"Convivência não se mede em horas, mas em presença de verdade. Não é sobre cumprir calendário, é sobre construir vínculo."</p>
-            <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" rel="noopener" class="btn-insta">
-              Ver no Instagram
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-slate-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center p-2 shadow-inner overflow-hidden border border-gold-500">
+                    <i class="fa-solid fa-scale-balanced text-2xl text-navy-900 mix-blend-overlay-logo transform group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+                <div>
+                    <span class="block text-xl font-serif font-bold tracking-wide text-amber-100">Dra. Sabrina Silveira</span>
+                    <span class="block text-xs font-light text-amber-300/80 tracking-widest uppercase">Advocacia & Consultoria • OAB/RS 123.439</span>
+                </div>
             </a>
-          </div>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-6 font-medium text-sm text-slate-300">
+                <a href="#sobre" class="hover:text-amber-300 transition-colors">Sobre mim</a>
+                <a href="#publicacoes" class="hover:text-amber-300 transition-colors">Instagram</a>
+                <a href="#areas" class="hover:text-amber-300 transition-colors">Áreas de Atuação</a>
+                <a href="#diferenciais" class="hover:text-amber-300 transition-colors">Diferenciais</a>
+                <a href="#localizacao" class="hover:text-amber-300 transition-colors">Localização</a>
+                <a href="#oab-transparencia" class="hover:text-amber-300 transition-colors">Transparência OAB</a>
+            </nav>
+
+            <!-- WhatsApp Header CTA -->
+            <div class="hidden xl:block">
+                <a href="https://wa.me/5551980475168?text=Ol%C3%A1%2C%20Dra.%20Sabrina!%20Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." 
+                   target="_blank" 
+                   class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-900/30 transition-all hover:scale-105 active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Agendar Consulta</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
         </div>
 
-        <!-- Post 2 -->
-        <div class="insta-card">
-          <div class="insta-img-wrapper">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipOVeJNf5QBsbfTv1582QMDdZgbK5dybDrBpE3Qy" alt="Sobrecarga Materna e Direito de Família">
-          </div>
-          <div class="insta-content">
-            <p class="insta-text">"Sobrecarga materna não é só sobre dinheiro, é sobre tempo, energia e presença. Parentalidade responsável exige participação real."</p>
-            <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" rel="noopener" class="btn-insta">
-              Ver no Instagram
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#sobre" class="block text-slate-300 hover:text-amber-300 py-2 border-b border-slate-800/50">Sobre mim</a>
+            <a href="#publicacoes" class="block text-slate-300 hover:text-amber-300 py-2 border-b border-slate-800/50">Instagram</a>
+            <a href="#areas" class="block text-slate-300 hover:text-amber-300 py-2 border-b border-slate-800/50">Áreas de Atuação</a>
+            <a href="#diferenciais" class="block text-slate-300 hover:text-amber-300 py-2 border-b border-slate-800/50">Diferenciais</a>
+            <a href="#localizacao" class="block text-slate-300 hover:text-amber-300 py-2 border-b border-slate-800/50">Localização</a>
+            <a href="#oab-transparencia" class="block text-amber-300 hover:text-amber-200 py-2 border-b border-slate-800/50">Selo de Transparência OAB</a>
+            <a href="https://wa.me/5551980475168?text=Ol%C3%A1%2C%20Dra.%20Sabrina!%20Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." 
+               target="_blank" 
+               class="flex items-center justify-center gap-2 bg-emerald-600 text-white font-semibold py-3 rounded-xl mt-4">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Falar pelo WhatsApp (51) 98047-5168</span>
             </a>
-          </div>
         </div>
+    </header>
 
-        <!-- Post 3 -->
-        <div class="insta-card">
-          <div class="insta-img-wrapper">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipP3qpTcZSVdfMC5mRpbjmbghKQj-0J8rBkhjOFr" alt="Proteção e Lei Maria da Penha">
-          </div>
-          <div class="insta-content">
-            <p class="insta-text">"Igualdade só existe quando há respeito e liberdade. Violência vai além do físico — a Lei Maria da Penha garante proteção integral."</p>
-            <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" rel="noopener" class="btn-insta">
-              Ver no Instagram
-            </a>
-          </div>
+    <!-- Hero Section -->
+    <section class="relative bg-navy-900 text-white overflow-hidden py-16 lg:py-24 hero-bg">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(197,160,89,0.15),transparent_50%)] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-gold-500/30 text-amber-300 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Advocacia Especializada • OAB/RS 123.439</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight text-slate-50">
+                        Defesa jurídica comprometida com <span class="text-amber-400 italic">seus direitos</span> e tranquilidade.
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 font-light max-w-2xl mx-auto lg:mx-0">
+                        Atendimento ético, ágil e pautado na estrita observância das normas legais e disciplinares. Proteja sua família, seu patrimônio e seus direitos com assessoria técnica qualificada em Santa Cruz do Sul.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5551980475168?text=Ol%C3%A1%2C%20Dra.%20Sabrina!%20Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." 
+                           target="_blank"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-emerald-950/50 transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Falar no WhatsApp Agora</span>
+                        </a>
+                        <a href="#localizacao" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-medium text-base px-6 py-4 rounded-xl transition-all">
+                            <i class="fa-solid fa-location-dot text-amber-400"></i>
+                            <span>Ver Localização do Escritório</span>
+                        </a>
+                    </div>
+
+                    <!-- Badge de Regulamentação -->
+                    <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-certificate text-gold-500"></i>
+                            <span class="font-semibold text-white">Inscrição Regular: OAB/RS 123.439</span>
+                        </div>
+                        <div class="hidden sm:block text-slate-700">•</div>
+                        <div>Atendimento Presencial e Consultoria Digital</div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-amber-500 to-amber-700 rounded-3xl blur opacity-30"></div>
+                        <div class="relative bg-navy-950 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="https://placehold.co/600x750/0e1726/c5a059?text=Dra.+Sabrina+Silveira" 
+                                 alt="Foto Profissional da Dra. Sabrina Silveira" 
+                                 class="w-full h-auto object-cover object-center aspect-[4/5]"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x750/111827/ffffff?text=Dra.+Sabrina+Silveira';">
+                            <div class="p-5 bg-gradient-to-t from-navy-950 via-navy-950/90 to-transparent absolute bottom-0 inset-x-0">
+                                <p class="text-white font-serif font-bold text-lg">Dra. Sabrina Silveira</p>
+                                <p class="text-amber-400 text-xs font-medium uppercase tracking-wider">Advogada • OAB/RS 123.439</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-      </div>
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x600/0e1726/c5a059?text=Escrit%C3%B3rio+Sabrina+Silveira" 
+                             alt="Escritório de Advocacia Dra. Sabrina Silveira" 
+                             class="rounded-2xl shadow-xl w-full object-cover aspect-square border border-slate-200">
+                        <div class="absolute -bottom-6 -right-6 bg-navy-900 text-white p-6 rounded-2xl shadow-2xl hidden sm:block max-w-xs border border-gold-500/30">
+                            <p class="text-2xl font-bold font-serif text-amber-400">Atuação Ética</p>
+                            <p class="text-xs text-slate-300 mt-1">Conformidade com o Código de Ética e Disciplina da OAB.</p>
+                        </div>
+                    </div>
+                </div>
 
-      <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="https://www.instagram.com/sabrinasilveira_adv" target="_blank" rel="noopener" class="btn-insta" style="padding: 0.8rem 2rem; font-size: 1rem;">
-          Siga @sabrinasilveira_adv no Instagram
-        </a>
-      </div>
-    </div>
-  </section>
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-md border border-amber-200">Sobre a Profissional</div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900">
+                        Compromisso técnico e humanizado para a proteção de seus direitos
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        A **Dra. Sabrina Silveira** (OAB/RS 123.439) atua com dedicação e rigor técnico para oferecer assessoria jurídica personalizada e transparente. Com escritório estruturado em Santa Cruz do Sul - RS, presta atendimento presencial e virtual priorizando a análise pormenorizada de cada demanda legal.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Seja para esclarecer dúvidas em reuniões consultivas, elaborar contratos preventivos ou atuar na defesa em processos judiciais, a condução dos trabalhos orienta-se pela probidade, celeridade e respeito constante ao cliente.
+                    </p>
 
-  <!-- SERVIÇOS/ATUAÇÃO -->
-  <section id="servicos" style="background-color: #f1f3f5; padding: 4rem 1rem;">
-    <div class="container" style="padding: 0;">
-      <h2 class="section-title">Áreas de Atuação</h2>
-      <p class="section-subtitle">Conheça nossas principais especialidades</p>
-      
-      <div class="services">
-        <div class="service-card">
-          <h3>Direito Civil &amp; Família</h3>
-          <p>Ações de família, sucessões, inventários, elaboração e revisão de contratos e indenizações.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <i class="fa-solid fa-user-shield text-amber-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Atendimento Humanizado</h4>
+                                <p class="text-xs text-slate-500">Escuta atenta e orientação clara ao longo de todas as fases da demanda.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <i class="fa-solid fa-scale-balanced text-amber-600 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Conformidade Legal</h4>
+                                <p class="text-xs text-slate-500">Atuação em conformidade com as diretrizes do Provimento 205/2021 da OAB.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="service-card">
-          <h3>Direito do Consumidor</h3>
-          <p>Defesa dos direitos do consumidor, cobranças indevidas e solução de conflitos prestacionais.</p>
+    </section>
+
+    <!-- Instagram Posts Feed Section -->
+    <section id="publicacoes" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-md border border-amber-200">Conteúdo Informativo</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900 mt-3">Informativos & Atualizações Legais</h2>
+                </div>
+                <a href="https://wa.me/5551980475168?text=Ol%C3%A1%2C%20vi%20uma%20publica%C3%A7%C3%A3o%20no%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" class="mt-4 md:mt-0 text-amber-700 hover:text-amber-800 font-semibold text-sm flex items-center gap-2">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>Acompanhe as novidades no Instagram</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative bg-navy-900 aspect-video">
+                        <img src="https://placehold.co/600x400/1b2a47/c5a059?text=Direito+de+Fam%C3%ADlia" alt="Publicação Direito de Família" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-navy-900/90 text-amber-300 text-xs px-2.5 py-1 rounded-full font-medium backdrop-blur-sm border border-gold-500/30">Informativo</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-amber-700 font-semibold">Direito de Família & Sucessões</span>
+                        <h3 class="text-lg font-bold text-navy-900 mt-2 mb-3">Guarda Compartilhada e Fixação de Alimentos</h3>
+                        <p class="text-slate-600 text-sm line-clamp-3">
+                            Entenda como a legislação civil brasileira equaciona o binômio necessidade do alimentando e possibilidade do alimentante no âmbito familiar.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                            <span>Consulta técnica presencial e online</span>
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative bg-navy-900 aspect-video">
+                        <img src="https://placehold.co/600x400/0e1726/c5a059?text=Planejamento+Patrimonial" alt="Publicação Planejamento Patrimonial" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-navy-900/90 text-amber-300 text-xs px-2.5 py-1 rounded-full font-medium backdrop-blur-sm border border-gold-500/30">Informativo</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-amber-700 font-semibold">Inventário & Partilha</span>
+                        <h3 class="text-lg font-bold text-navy-900 mt-2 mb-3">Procedimentos em Inventários Extrajudiciais</h3>
+                        <p class="text-slate-600 text-sm line-clamp-3">
+                            Requisitos legais para lavratura de escritura pública de inventário diretamente via serventia extrajudicial quando há consenso entre herdeiros.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                            <span>Consulta técnica presencial e online</span>
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative bg-navy-900 aspect-video">
+                        <img src="https://placehold.co/600x400/a37f37/ffffff?text=Contratos+e+Seguran%C3%A7a" alt="Publicação Contratos" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-navy-900/90 text-amber-300 text-xs px-2.5 py-1 rounded-full font-medium backdrop-blur-sm border border-gold-500/30">Informativo</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-amber-700 font-semibold">Direito Civil & Consumidor</span>
+                        <h3 class="text-lg font-bold text-navy-900 mt-2 mb-3">Análise Preventiva em Relações Contratuais</h3>
+                        <p class="text-slate-600 text-sm line-clamp-3">
+                            A importância de parecer prévio antes da assinatura de contratos civis ou de consumo para resguardar direitos e mitigar litígios futuros.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                            <span>Consulta técnica presencial e online</span>
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
-        <div class="service-card">
-          <h3>Consultoria Preventiva</h3>
-          <p>Orientação jurídica estratégica para prevenção de litígios e análise de riscos burocráticos.</p>
+    </section>
+
+    <!-- Areas of Practice Section -->
+    <section id="areas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-md border border-amber-200">Especialidades</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900 mt-3">Áreas de Atuação Jurídica</h2>
+                <p class="text-slate-600 mt-4">Prestação de serviços advocatícios e consultoria jurídica pautados pela ética e atualização constante.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-100/80 text-amber-700 flex items-center justify-center text-2xl mb-6 border border-amber-200">
+                            <i class="fa-solid fa-people-roof"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-navy-900 mb-3">Civil & Família</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Orientação e acompanhamento em divórcios, fixação e revisão de pensão alimentícia, guarda, união estável, partilha de bens e planejamento sucessório.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551980475168?text=Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20em%20Direito%20de%20Fam%C3%ADlia." target="_blank" class="text-amber-700 hover:text-amber-800 font-semibold text-sm flex items-center gap-2">
+                        <span>Solicitar Atendimento</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-100/80 text-amber-700 flex items-center justify-center text-2xl mb-6 border border-amber-200">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-navy-900 mb-3">Direito do Consumidor</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Defesa dos direitos em relações de consumo, demandas contra vícios de produtos ou serviços, cobranças indevidas e indenizações por danos morais e materiais.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551980475168?text=Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20em%20Direito%20do%20Consumidor." target="_blank" class="text-amber-700 hover:text-amber-800 font-semibold text-sm flex items-center gap-2">
+                        <span>Solicitar Atendimento</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-100/80 text-amber-700 flex items-center justify-center text-2xl mb-6 border border-amber-200">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-navy-900 mb-3">Consultoria Preventiva</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Elaboração, análise minuciosa e negociação de contratos em geral para prevenção de riscos operacionais e redução de potenciais demandas judiciais.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551980475168?text=Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Consultoria%20Preventiva." target="_blank" class="text-amber-700 hover:text-amber-800 font-semibold text-sm flex items-center gap-2">
+                        <span>Solicitar Atendimento</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SEÇÃO DE DIFERENCIAIS INSTITUCIONAIS -->
-  <section id="diferenciais" class="diferenciais-bg">
-    <div class="container" style="padding: 0;">
-      <h2 class="section-title">Compromisso e Diferenciais</h2>
-      <p class="section-subtitle">Padrões de conduta e excelência técnica na prestação dos serviços</p>
+    <!-- Institutional Differentials Section (OAB Compliant) -->
+    <section id="diferenciais" class="py-20 bg-navy-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-gold-500/30 text-amber-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-3">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Valores Institucionais</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Compromisso com a Excelência Jurídica</h2>
+                <p class="text-slate-300 mt-4 text-sm sm:text-base">Atuação focada na clareza informativa, conformidade ética e rigor técnico em Santa Cruz do Sul.</p>
+            </div>
 
-      <div class="grid-diferenciais">
-        <div class="card-diferencial">
-          <div class="icon-diferencial"><i class="fa-solid fa-handshake"></i></div>
-          <h3>Atendimento Humanizado</h3>
-          <p>Acompanhamento próximo e acolhedor em momentos decisivos, com foco no bem-estar e na clareza para o cliente.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Differential 1 -->
+                <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700/60 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6 border border-amber-500/20">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Comunicação Transparente</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Relatórios e atualizações constantes da situação processual em linguagem acessível, mantendo o cliente plenamente informado em cada etapa do seu processo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Differential 2 -->
+                <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700/60 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6 border border-amber-500/20">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Análise Individualizada</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Estudo profundo dos precedentes jurídicos e da jurisprudência aplicável ao seu caso específico, buscando alternativas eficazes e seguras.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Differential 3 -->
+                <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-700/60 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6 border border-amber-500/20">
+                            <i class="fa-solid fa-user-lock"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3">Sigilo Profissional Absoluto</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Tratamento rigoroso dos dados e informações confidenciais compartilhadas, com total observância do sigilo profissional inerente à advocacia.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card-diferencial">
-          <div class="icon-diferencial"><i class="fa-solid fa-scale-balanced"></i></div>
-          <h3>Transparência e Ética</h3>
-          <p>Informações jurídicas prestadas de forma direta, sem termos rebuscados, mantendo o cliente ciente de todas as etapas.</p>
+    <!-- Location & Google Maps Section -->
+    <section id="localizacao" class="py-20 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-md border border-amber-200">Atendimento Presencial</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900 mt-3">Sede do Escritório em Santa Cruz do Sul</h2>
+                <p class="text-slate-600 mt-2">Atendimento em ambiente reservado mediante agendamento prévio.</p>
+            </div>
+
+            <!-- Main Location Container -->
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                
+                <!-- Info Column (Side Card) -->
+                <div class="lg:col-span-5 p-8 lg:p-10 bg-navy-900 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    
+                    <div class="space-y-8 relative z-10">
+                        <div>
+                            <span class="inline-flex items-center gap-2 text-amber-400 text-xs font-semibold tracking-wider uppercase bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+                                <i class="fa-solid fa-building-user"></i>
+                                Escritório Físico
+                            </span>
+                            <h3 class="text-2xl font-serif font-bold text-white mt-4">Dra. Sabrina Silveira</h3>
+                            <p class="text-slate-300 text-sm mt-1">Advocacia e Consultoria Jurídica • OAB/RS 123.439</p>
+                        </div>
+
+                        <!-- Address Info Block -->
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Endereço Profissional</h4>
+                                    <p class="text-slate-100 font-medium text-base mt-0.5">R. Joaquim Murtinho, 304 - A Grande</p>
+                                    <p class="text-slate-300 text-sm">Santa Cruz do Sul - RS, CEP 96830-000</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+                                    <i class="fa-solid fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Horário de Funcionamento</h4>
+                                    <p class="text-slate-100 font-medium text-sm mt-0.5">Segunda a Sexta-feira</p>
+                                    <p class="text-slate-300 text-xs">08:30 às 11:45 | 13:30 às 18:00</p>
+                                    <p class="text-amber-400 text-xs mt-1 italic">* Consultas com hora marcada</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider">Contato Direto</h4>
+                                    <p class="text-slate-100 font-medium text-sm mt-0.5">WhatsApp: (51) 98047-5168</p>
+                                    <p class="text-slate-300 text-xs">contato@sabrinasilveira.adv.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Google Maps Navigation Button -->
+                    <div class="pt-8 relative z-10 border-t border-slate-800">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Joaquim+Murtinho+304+Santa+Cruz+do+Sul+RS" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-amber-500/20 hover:scale-[1.02]">
+                            <i class="fa-solid fa-diamond-turn-right text-lg"></i>
+                            <span>Traçar Rota até o Escritório</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed Column -->
+                <div class="lg:col-span-7 relative min-h-[400px] bg-slate-200">
+                    <!-- Overlay Banner over Map -->
+                    <div class="absolute top-4 left-4 right-4 z-10 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-md border border-slate-200/80 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="truncate">
+                                <p class="text-xs font-bold text-navy-900 truncate">Escritório Dra. Sabrina Silveira</p>
+                                <p class="text-xs text-slate-500 truncate">R. Joaquim Murtinho, 304 - Santa Cruz do Sul - RS</p>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Joaquim+Murtinho+304+Santa+Cruz+do+Sul+RS" 
+                           target="_blank" 
+                           class="shrink-0 bg-navy-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-amber-600 transition-colors">
+                            Ver no Mapa
+                        </a>
+                    </div>
+
+                    <!-- Embedded Google Map targeting Santa Cruz do Sul address -->
+                    <iframe 
+                        title="Mapa de Localização do Escritório Dra. Sabrina Silveira"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.381395899955!2d-52.4275263236054!3d-29.726720475083984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951ca30049411207%3A0xd1a6ffa0b396f7f3!2sSabrina%20Silveira%20%7C%20Advogada%20Santa%20Cruz%20Do%20Sul!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+                        class="w-full h-full min-h-[420px] border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="card-diferencial">
-          <div class="icon-diferencial"><i class="fa-solid fa-shield-halved"></i></div>
-          <h3>Estratégia Preventiva</h3>
-          <p>Soluções jurídicas direcionadas para solucionar controvérsias com agilidade e mitigar riscos futuros.</p>
+    <!-- OAB Transparency & Identification Badge Section -->
+    <section id="oab-transparencia" class="py-16 bg-gradient-to-b from-slate-900 to-navy-950 text-white border-t border-gold-500/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-[#0e1726] border-2 border-[#c5a059]/40 rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
+                <!-- Background Styling Accent -->
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-[#c5a059]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Stylized OAB Badge Icon Column -->
+                    <div class="lg:col-span-4 flex flex-col items-center text-center border-b lg:border-b-0 lg:border-r border-slate-800 pb-8 lg:pb-0 lg:pr-8">
+                        <div class="w-28 h-28 rounded-full bg-gradient-to-br from-[#1b2a47] to-[#0e1726] border-4 border-[#c5a059] flex items-center justify-center p-3 shadow-xl mb-4 relative">
+                            <i class="fa-solid fa-scale-balanced text-4xl text-[#c5a059]"></i>
+                            <div class="absolute -bottom-2 bg-[#c5a059] text-[#0e1726] text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full shadow-md">
+                                REGULAR
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-[#c5a059]">Selo de Identificação OAB</h3>
+                        <p class="text-xs text-slate-400 mt-1 max-w-xs">Informaçōes e transparência institucional em conformidade com o Provimento 205/2021 do Conselho Federal da OAB.</p>
+                    </div>
+
+                    <!-- Transparency Data Content Column -->
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-[#c5a059] font-bold">Advogada Inscrita</span>
+                                <h4 class="text-2xl font-serif font-bold text-white">Dra. Sabrina Silveira</h4>
+                            </div>
+                            <div class="bg-[#1b2a47] border border-[#c5a059]/50 px-4 py-2 rounded-xl text-center">
+                                <span class="block text-[10px] uppercase tracking-widest text-slate-400">Inscrição Principal</span>
+                                <span class="text-lg font-bold text-[#c5a059]">OAB/RS 123.439</span>
+                            </div>
+                        </div>
+
+                        <!-- Grid Details -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
+                                <span class="block text-xs text-slate-400 font-medium uppercase">Categoria</span>
+                                <span class="text-slate-200 font-semibold">Advocacia & Consultoria Jurídica</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
+                                <span class="block text-xs text-slate-400 font-medium uppercase">Contato Telefônico / WhatsApp</span>
+                                <span class="text-slate-200 font-semibold">(51) 98047-5168</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800 sm:col-span-2">
+                                <span class="block text-xs text-slate-400 font-medium uppercase">Endereço Físico Regular</span>
+                                <span class="text-slate-200 font-semibold">R. Joaquim Murtinho, 304 - A Grande, Santa Cruz do Sul - RS, CEP 96830-000</span>
+                            </div>
+                            <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800 sm:col-span-2">
+                                <span class="block text-xs text-slate-400 font-medium uppercase">E-mail Profissional</span>
+                                <span class="text-slate-200 font-semibold">contato@sabrinasilveira.adv.br</span>
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-slate-400 italic">
+                            * Este portal web atende aos deveres de informação e transparência previstos no Código de Ética e Disciplina da OAB e no Provimento nº 205/2021.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- LOCALIZAÇÃO / MAPA -->
-  <section id="localizacao" class="mapa-section">
-    <div class="container" style="padding: 0;">
-      <h2 class="section-title">Localização do Escritório</h2>
-      <p class="section-subtitle">Atendimento presencial com fácil acesso em Santa Cruz do Sul / RS</p>
+    <!-- Footer Section -->
+    <footer class="bg-navy-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center p-2">
+                            <i class="fa-solid fa-scale-balanced text-xl text-navy-900 mix-blend-overlay-logo"></i>
+                        </div>
+                        <span class="text-xl font-serif font-bold text-white">Dra. Sabrina Silveira</span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+                        Atuação jurídica pautada na ética, transparência e responsabilidade técnica. Atendimento presencial em Santa Cruz do Sul - RS e consultoria digital.
+                    </p>
+                    <p class="text-xs text-amber-400 font-semibold">
+                        OAB/RS 123.439 • Santa Cruz do Sul - RS
+                    </p>
+                </div>
 
-      <div class="mapa-container">
-        <div class="mapa-info">
-          <h3>Sede do Escritório</h3>
-          <p><i class="fa-solid fa-location-dot" style="color: var(--secondary); margin-right: 8px;"></i> <strong>Endereço:</strong> R. Joaquim Murtinho, 304 - A Grande</p>
-          <p><i class="fa-solid fa-city" style="color: var(--secondary); margin-right: 8px;"></i> <strong>Cidade:</strong> Santa Cruz do Sul - RS</p>
-          <p><i class="fa-solid fa-map-pin" style="color: var(--secondary); margin-right: 8px;"></i> <strong>CEP:</strong> 96830-000</p>
-          <a href="https://www.google.com/maps/dir//Sabrina+Silveira+%7C+Advogada+Santa+Cruz+Do+Sul,+R.+Joaquim+Murtinho,+304+-+A+Grande,+Santa+Cruz+do+Sul+-+RS,+96830-000/@-29.7267205,-52.4249514,17z" target="_blank" rel="noopener" class="btn-rota">
-            <i class="fa-solid fa-route"></i> Abrir Rotas no Google Maps
-          </a>
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#sobre" class="hover:text-amber-400 transition-colors">Sobre a Profissional</a></li>
+                        <li><a href="#publicacoes" class="hover:text-amber-400 transition-colors">Atualizações no Instagram</a></li>
+                        <li><a href="#areas" class="hover:text-amber-400 transition-colors">Áreas de Atuação</a></li>
+                        <li><a href="#diferenciais" class="hover:text-amber-400 transition-colors">Diferenciais</a></li>
+                        <li><a href="#localizacao" class="hover:text-amber-400 transition-colors">Localização</a></li>
+                        <li><a href="#oab-transparencia" class="hover:text-amber-400 transition-colors">Transparência OAB</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Contato & Endereço</h4>
+                    <p class="text-sm text-slate-300">R. Joaquim Murtinho, 304 - A Grande</p>
+                    <p class="text-sm text-slate-400">Santa Cruz do Sul - RS, CEP 96830-000</p>
+                    <p class="text-sm text-slate-400 mt-2"><i class="fa-solid fa-envelope text-xs text-amber-400 mr-1"></i> contato@sabrinasilveira.adv.br</p>
+                    <div class="mt-4 pt-4 border-t border-slate-800">
+                        <a href="https://wa.me/5551980475168?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 px-3 py-2 rounded-lg inline-flex items-center gap-2 border border-slate-700">
+                            <i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i>
+                            <span>(51) 98047-5168</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Dra. Sabrina Silveira - Advocacia & Consultoria. OAB/RS 123.439. Todos os direitos reservados.</p>
+                <p class="text-center sm:text-right">Santa Cruz do Sul - Rio Grande do Sul</p>
+            </div>
         </div>
+    </footer>
 
-        <div>
-          <iframe 
-            class="mapa-iframe" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.234858921869!2d-52.42752632360293!3d-29.72671581729091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951ca30049411207%3A0xd1a6ffa0b396f7f3!2sSabrina%20Silveira%20%7C%20Advogada%20Santa%20Cruz%20Do%20Sul!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5551980475168?text=Ol%C3%A1%2C%20Dra.%20Sabrina!%20Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." 
+       class="whatsapp-float fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full flex items-center justify-center text-3xl shadow-2xl shadow-emerald-900/50 transition-all hover:scale-110 focus:outline-none focus:ring-4 focus:ring-emerald-400/50" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Fale com a Dra. Sabrina no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-  <!-- CONTATO & WHATSAPP -->
-  <section id="contato" class="container">
-    <h2 class="section-title">Entre em Contato</h2>
-    <p class="section-subtitle">Estamos prontos para atender você</p>
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    <div class="contact-container">
-      <h3>Atendimento via WhatsApp</h3>
-      <p style="color: var(--gray); margin-top: 0.5rem;">Clique no botão abaixo para iniciar o atendimento direto com o escritório.</p>
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-      <a href="https://wa.me/5551980475168?text=Ol%C3%A1,%20Dra.%20Sabrina!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="btn-whatsapp">
-        <i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i>
-        Falar no WhatsApp
-      </a>
-
-      <div style="margin-top: 2rem; font-size: 0.95rem; color: var(--gray);">
-        <p><strong>E-mail:</strong> contato@sabrinasilveira.adv.br</p>
-        <p><strong>Atendimento:</strong> Santa Cruz do Sul / RS</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- RODAPÉ -->
-  <footer>
-    <p>&copy; Dra. Sabrina Silveira - OAB/RS 123.439. Todos os direitos reservados.</p>
-  </footer>
-
-  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-  <a href="https://wa.me/5551980475168?text=Ol%C3%A1,%20Dra.%20Sabrina!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="whatsapp-flutuante" aria-label="Atendimento via WhatsApp">
-    <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
-    Falar no WhatsApp
-  </a>
-
+        // Close menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
